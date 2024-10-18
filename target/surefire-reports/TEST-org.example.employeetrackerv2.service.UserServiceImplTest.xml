@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.example.employeetrackerv2.service.UserServiceImplTest" time="0.352" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.example.employeetrackerv2.service.UserServiceImplTest" time="0.301" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="MA"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/22.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/mac/Documents/GitHub/EmployTrackerV2_test/target/surefire/surefirebooter-20241018120138535_3.jar /Users/mac/Documents/GitHub/EmployTrackerV2_test/target/surefire 2024-10-18T12-01-38_495-jvmRun1 surefire-20241018120138535_1tmp surefire_0-20241018120138535_2tmp"/>
+    <property name="sun.java.command" value="/Users/mac/Documents/GitHub/EmployTrackerV2_test/target/surefire/surefirebooter-20241018165715092_3.jar /Users/mac/Documents/GitHub/EmployTrackerV2_test/target/surefire 2024-10-18T16-57-15_049-jvmRun1 surefire-20241018165715092_1tmp surefire_0-20241018165715092_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/mac/Documents/GitHub/EmployTrackerV2_test/target/test-classes:/Users/mac/Documents/GitHub/EmployTrackerV2_test/target/classes:/Users/mac/.m2/repository/jakarta/servlet/jsp/jstl/jakarta.servlet.jsp.jstl-api/2.0.0/jakarta.servlet.jsp.jstl-api-2.0.0.jar:/Users/mac/.m2/repository/jakarta/el/jakarta.el-api/4.0.0/jakarta.el-api-4.0.0.jar:/Users/mac/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/3.0.0/jakarta.xml.bind-api-3.0.0.jar:/Users/mac/.m2/repository/org/glassfish/web/jakarta.servlet.jsp.jstl/2.0.0/jakarta.servlet.jsp.jstl-2.0.0.jar:/Users/mac/.m2/repository/jakarta/servlet/jakarta.servlet-api/6.0.0/jakarta.servlet-api-6.0.0.jar:/Users/mac/.m2/repository/jakarta/servlet/jsp/jakarta.servlet.jsp-api/3.0.0/jakarta.servlet.jsp-api-3.0.0.jar:/Users/mac/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/mac/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/mac/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.0-M2/junit-jupiter-engine-5.11.0-M2.jar:/Users/mac/.m2/repository/org/junit/platform/junit-platform-engine/1.11.0-M2/junit-platform-engine-1.11.0-M2.jar:/Users/mac/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/mac/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0-M2/junit-platform-commons-1.11.0-M2.jar:/Users/mac/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0-M2/junit-jupiter-api-5.11.0-M2.jar:/Users/mac/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/mac/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/mac/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/mac/.m2/repository/org/mockito/mockito-junit-jupiter/4.0.0/mockito-junit-jupiter-4.0.0.jar:/Users/mac/.m2/repository/org/mockito/mockito-core/4.0.0/mockito-core-4.0.0.jar:/Users/mac/.m2/repository/net/bytebuddy/byte-buddy/1.11.19/byte-buddy-1.11.19.jar:/Users/mac/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.19/byte-buddy-agent-1.11.19.jar:/Users/mac/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/Users/mac/.m2/repository/jakarta/platform/jakarta.jakartaee-api/9.0.0/jakarta.jakartaee-api-9.0.0.jar:/Users/mac/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/mac/.m2/repository/org/hibernate/orm/hibernate-core/6.2.6.Final/hibernate-core-6.2.6.Final.jar:/Users/mac/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/mac/.m2/repository/org/jboss/logging/jboss-logging/3.5.0.Final/jboss-logging-3.5.0.Final.jar:/Users/mac/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/Users/mac/.m2/repository/io/smallrye/jandex/3.0.5/jandex-3.0.5.jar:/Users/mac/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/Users/mac/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.2/jaxb-runtime-4.0.2.jar:/Users/mac/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.2/jaxb-core-4.0.2.jar:/Users/mac/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.1/jakarta.activation-api-2.1.1.jar:/Users/mac/.m2/repository/org/eclipse/angus/angus-activation/2.0.0/angus-activation-2.0.0.jar:/Users/mac/.m2/repository/org/glassfish/jaxb/txw2/4.0.2/txw2-4.0.2.jar:/Users/mac/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.1/istack-commons-runtime-4.1.1.jar:/Users/mac/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/mac/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar:/Users/mac/.m2/repository/org/postgresql/postgresql/42.7.2/postgresql-42.7.2.jar:/Users/mac/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/Users/mac/.m2/repository/com/sun/mail/jakarta.mail/2.0.1/jakarta.mail-2.0.1.jar:/Users/mac/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar:/Users/mac/.m2/repository/jakarta/security/enterprise/jakarta.security.enterprise-api/2.0.0/jakarta.security.enterprise-api-2.0.0.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/mac/Documents/GitHub/EmployTrackerV2_test/target/surefire/surefirebooter-20241018120138535_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/mac/Documents/GitHub/EmployTrackerV2_test/target/surefire/surefirebooter-20241018165715092_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="22.0.2"/>
@@ -58,7 +58,7 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="testAuthenticate_Failure_IncorrectPassword" classname="org.example.employeetrackerv2.service.UserServiceImplTest" time="0.328">
+  <testcase name="testAuthenticate_Failure_IncorrectPassword" classname="org.example.employeetrackerv2.service.UserServiceImplTest" time="0.283">
     <system-err><![CDATA[java.lang.instrument.IllegalClassFormatException: Error while instrumenting sun/util/resources/cldr/provider/CLDRLocaleDataMetaInfo with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:242)
@@ -323,6 +323,6 @@ Caused by: java.lang.IllegalArgumentException: Unsupported class file major vers
 	... 118 more
 ]]></system-err>
   </testcase>
-  <testcase name="testAuthenticate_Failure_UserNotFound" classname="org.example.employeetrackerv2.service.UserServiceImplTest" time="0.002"/>
-  <testcase name="testAuthenticate_Success" classname="org.example.employeetrackerv2.service.UserServiceImplTest" time="0.004"/>
+  <testcase name="testAuthenticate_Failure_UserNotFound" classname="org.example.employeetrackerv2.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="testAuthenticate_Success" classname="org.example.employeetrackerv2.service.UserServiceImplTest" time="0.002"/>
 </testsuite>
