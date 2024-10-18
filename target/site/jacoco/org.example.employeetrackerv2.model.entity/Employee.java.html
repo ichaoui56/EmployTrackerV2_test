@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Employee.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">EmployeeTrackerV2</a> &gt; <a href="index.source.html" class="el_package">org.example.employeetrackerv2.model.entity</a> &gt; <span class="el_source">Employee.java</span></div><h1>Employee.java</h1><pre class="source lang-java linenums">package org.example.employeetrackerv2.model.entity;
+
+import org.example.employeetrackerv2.model.enums.Role;
+
+import jakarta.persistence.*;
+import java.util.Date;
+import java.util.List;
+
+@Entity
+public class Employee extends User {
+
+    @Column(name = &quot;birth_date&quot;, nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date birthDate;
+
+    @Column(name = &quot;social_number&quot;, unique = true, nullable = false, length = 50)
+    private String socialNumber;
+
+<span class="pc" id="L19">    @Column(name = &quot;leave_balance&quot;, nullable = false)</span>
+    private int leaveBalance = 20;
+
+    @Column(name = &quot;start_date&quot;, nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date startDate;
+
+    @Column(name = &quot;salary&quot;, nullable = false)
+    private long salary;
+
+    @Column(name = &quot;child_number&quot;, nullable = false)
+    private int childNumber;
+
+    @Column(name = &quot;department&quot;, nullable = false, length = 100)
+    private String department;
+
+    @Column(name = &quot;poste&quot;, nullable = false, length = 100)
+    private String poste;
+
+    @Column(name = &quot;allocation_familial&quot;, nullable = false)
+    private double allocationFamilial;
+
+    @OneToMany(mappedBy = &quot;employee&quot;, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List&lt;EmployeeHistory&gt; employeeHistoryList;
+
+    @OneToMany(mappedBy = &quot;employee&quot;)
+    private List&lt;Leave&gt; leaveList;
+
+<span class="fc" id="L47">    public Employee() {</span>
+<span class="fc" id="L48">    }</span>
+
+    public Employee(String name, String email, String password, Role role, Date birthDate, String socialNumber, Date startDate, long salary, int childNumber, String department, String poste,double allocationFamiliale) {
+<span class="nc" id="L51">        super(name, email, password, role);</span>
+<span class="nc" id="L52">        this.birthDate = birthDate;</span>
+<span class="nc" id="L53">        this.socialNumber = socialNumber;</span>
+<span class="nc" id="L54">        this.startDate = startDate;</span>
+<span class="nc" id="L55">        this.salary = salary;</span>
+<span class="nc" id="L56">        this.childNumber = childNumber;</span>
+<span class="nc" id="L57">        this.department = department;</span>
+<span class="nc" id="L58">        this.poste = poste;</span>
+<span class="nc" id="L59">        this.allocationFamilial = allocationFamiliale;</span>
+<span class="nc" id="L60">    }</span>
+
+    public Date getBirthDate() {
+<span class="nc" id="L63">        return birthDate;</span>
+    }
+
+    public void setBirthDate(Date birthDate) {
+<span class="nc" id="L67">        this.birthDate = birthDate;</span>
+<span class="nc" id="L68">    }</span>
+
+    public String getSocialNumber() {
+<span class="nc" id="L71">        return socialNumber;</span>
+    }
+
+    public void setSocialNumber(String socialNumber) {
+<span class="nc" id="L75">        this.socialNumber = socialNumber;</span>
+<span class="nc" id="L76">    }</span>
+
+    public Date getStartDate() {
+<span class="nc" id="L79">        return startDate;</span>
+    }
+
+    public void setStartDate(Date startDate) {
+<span class="nc" id="L83">        this.startDate = startDate;</span>
+<span class="nc" id="L84">    }</span>
+
+    public long getSalary() {
+<span class="nc" id="L87">        return salary;</span>
+    }
+
+    public void setSalary(long salary) {
+<span class="nc" id="L91">        this.salary = salary;</span>
+<span class="nc" id="L92">    }</span>
+
+    public int getChildNumber() {
+<span class="nc" id="L95">        return childNumber;</span>
+    }
+
+    public void setChildNumber(int childNumber) {
+<span class="nc" id="L99">        this.childNumber = childNumber;</span>
+<span class="nc" id="L100">    }</span>
+
+    public String getDepartment() {
+<span class="nc" id="L103">        return department;</span>
+    }
+
+    public void setDepartment(String department) {
+<span class="nc" id="L107">        this.department = department;</span>
+<span class="nc" id="L108">    }</span>
+
+    public String getPoste() {
+<span class="nc" id="L111">        return poste;</span>
+    }
+
+    public void setPoste(String poste) {
+<span class="nc" id="L115">        this.poste = poste;</span>
+<span class="nc" id="L116">    }</span>
+
+    public List&lt;EmployeeHistory&gt; getEmployeeHistoryList() {
+<span class="nc" id="L119">        return employeeHistoryList;</span>
+    }
+
+    public void setEmployeeHistoryList(List&lt;EmployeeHistory&gt; employeeHistoryList) {
+<span class="nc" id="L123">        this.employeeHistoryList = employeeHistoryList;</span>
+<span class="nc" id="L124">    }</span>
+
+    public int getLeaveBalance() {
+<span class="nc" id="L127">        return leaveBalance;</span>
+    }
+
+    public void setLeaveBalance(int leaveBalance) {
+<span class="nc" id="L131">        this.leaveBalance = leaveBalance;</span>
+<span class="nc" id="L132">    }</span>
+
+    public List&lt;Leave&gt; getLeaveList() {
+<span class="nc" id="L135">        return leaveList;</span>
+    }
+
+    public void setLeaveList(List&lt;Leave&gt; leaveList) {
+<span class="nc" id="L139">        this.leaveList = leaveList;</span>
+<span class="nc" id="L140">    }</span>
+
+    public double getAllocationFamilial() {
+<span class="nc" id="L143">        return allocationFamilial;</span>
+    }
+
+    public void setAllocationFamilial(double allocationFamilial) {
+<span class="nc" id="L147">        this.allocationFamilial = allocationFamilial;</span>
+<span class="nc" id="L148">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AccessFilter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">EmployeeTrackerV2</a> &gt; <a href="index.source.html" class="el_package">org.example.employeetrackerv2.servlet</a> &gt; <span class="el_source">AccessFilter.java</span></div><h1>AccessFilter.java</h1><pre class="source lang-java linenums">package org.example.employeetrackerv2.servlet;
+
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.FilterConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import org.example.employeetrackerv2.model.entity.User;
+import org.example.employeetrackerv2.model.enums.Role;
+
+import java.io.IOException;
+
+@WebFilter(&quot;/*&quot;)
+<span class="nc" id="L19">public class AccessFilter implements Filter {</span>
+
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
+
+<span class="nc" id="L25">        HttpServletRequest httpRequest = (HttpServletRequest) request;</span>
+<span class="nc" id="L26">        HttpServletResponse httpResponse = (HttpServletResponse) response;</span>
+<span class="nc" id="L27">        HttpSession session = httpRequest.getSession(false);</span>
+
+<span class="nc" id="L29">        String requestURI = httpRequest.getRequestURI();</span>
+<span class="nc" id="L30">        String contextPath = httpRequest.getContextPath();</span>
+
+<span class="nc bnc" id="L32" title="All 4 branches missed.">        boolean isLoggedIn = (session != null &amp;&amp; session.getAttribute(&quot;user&quot;) != null);</span>
+<span class="nc bnc" id="L33" title="All 4 branches missed.">        boolean isAdmin = isLoggedIn &amp;&amp; ((User) session.getAttribute(&quot;user&quot;)).getRole() == Role.ADMIN;</span>
+
+<span class="nc bnc" id="L35" title="All 4 branches missed.">        if (requestURI.endsWith(&quot;.css&quot;) || requestURI.endsWith(&quot;.jpg&quot;) ||</span>
+<span class="nc bnc" id="L36" title="All 4 branches missed.">                requestURI.endsWith(&quot;.png&quot;) || requestURI.endsWith(&quot;.js&quot;)) {</span>
+<span class="nc" id="L37">            chain.doFilter(request, response);</span>
+<span class="nc" id="L38">            return;</span>
+        }
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        if (!isLoggedIn) {</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">            if (requestURI.equals(contextPath + &quot;/&quot;) ||</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">                    requestURI.equals(contextPath + &quot;/auth&quot;) ||</span>
+<span class="nc bnc" id="L43" title="All 2 branches missed.">                    requestURI.equals(contextPath + &quot;/offer&quot;) ||</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">                    (requestURI.equals(contextPath + &quot;/application&quot;) &amp;&amp;</span>
+<span class="nc bnc" id="L45" title="All 2 branches missed.">                            &quot;applyOfferForm&quot;.equals(httpRequest.getParameter(&quot;action&quot;))) ||</span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">                    (requestURI.equals(contextPath + &quot;/application&quot;) &amp;&amp;</span>
+<span class="nc bnc" id="L47" title="All 2 branches missed.">                            &quot;applyOffer&quot;.equals(httpRequest.getParameter(&quot;action&quot;)))) {</span>
+<span class="nc" id="L48">                chain.doFilter(request, response);</span>
+<span class="nc" id="L49">                return;</span>
+            } else {
+<span class="nc" id="L51">                httpResponse.sendRedirect(contextPath + &quot;/auth?action=login&quot;);</span>
+<span class="nc" id="L52">                return;</span>
+            }
+        }
+
+
+<span class="nc bnc" id="L57" title="All 2 branches missed.">        if (isLoggedIn) {</span>
+<span class="nc bnc" id="L58" title="All 4 branches missed.">            if (requestURI.equals(contextPath + &quot;/auth&quot;) &amp;&amp; &quot;logout&quot;.equals(httpRequest.getParameter(&quot;action&quot;))) {</span>
+<span class="nc" id="L59">                chain.doFilter(request, response);</span>
+<span class="nc" id="L60">                return;</span>
+            }
+
+<span class="nc bnc" id="L63" title="All 2 branches missed.">            if (requestURI.equals(contextPath + &quot;/auth&quot;)) {</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">                if (isAdmin) {</span>
+<span class="nc" id="L65">                    httpResponse.sendRedirect(contextPath + &quot;/dashboard.jsp&quot;);</span>
+                } else {
+<span class="nc" id="L67">                    httpResponse.sendRedirect(contextPath + &quot;/&quot;);</span>
+                }
+<span class="nc" id="L69">                return;</span>
+            }
+
+<span class="nc bnc" id="L72" title="All 4 branches missed.">            if (requestURI.equals(contextPath + &quot;/dashboard.jsp&quot;) || requestURI.equals(contextPath + &quot;/employee&quot;)) {</span>
+<span class="nc bnc" id="L73" title="All 2 branches missed.">                if (!isAdmin) {</span>
+<span class="nc" id="L74">                    httpResponse.sendRedirect(contextPath + &quot;/auth?action=login&quot;);</span>
+<span class="nc" id="L75">                    return;</span>
+                }
+            }
+
+<span class="nc" id="L79">            chain.doFilter(request, response);</span>
+<span class="nc" id="L80">            return;</span>
+        }
+
+
+
+<span class="nc" id="L85">        httpResponse.sendRedirect(contextPath + &quot;/404.jsp&quot;);</span>
+<span class="nc" id="L86">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Leave.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">EmployeeTrackerV2</a> &gt; <a href="index.source.html" class="el_package">org.example.employeetrackerv2.model.entity</a> &gt; <span class="el_source">Leave.java</span></div><h1>Leave.java</h1><pre class="source lang-java linenums">package org.example.employeetrackerv2.model.entity;
+
+import jakarta.persistence.*;
+import org.example.employeetrackerv2.model.enums.OfferStatus;
+import org.example.employeetrackerv2.model.enums.Status;
+
+import java.util.Date;
+
+@Entity
+public class Leave {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = &quot;id&quot;, nullable = false)
+    private int id;
+
+    @Column(name = &quot;leave_reason&quot;, nullable = false, length = 255)
+    private String leaveReason;
+
+    @Column(name = &quot;periode&quot;, nullable = false, length = 255)
+    private int periode;
+
+    @Column(name = &quot;leave_date&quot;, nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date leaveDate;
+
+    @Column(name = &quot;document_path&quot;, length = 500)
+    private String documentPath;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = &quot;status&quot;, nullable = false)
+    private Status status;
+
+    @ManyToOne
+    @JoinColumn(name = &quot;employee_id&quot;, nullable = false)
+    private Employee employee;
+
+<span class="fc" id="L38">    public Leave() {}</span>
+
+<span class="nc" id="L40">    public Leave(int periode, Date leaveDate, String leaveReason, String documentPath, Employee employee) {</span>
+<span class="nc" id="L41">        this.leaveReason = leaveReason;</span>
+<span class="nc" id="L42">        this.leaveDate = leaveDate;</span>
+<span class="nc" id="L43">        this.status = Status.received;</span>
+<span class="nc" id="L44">        this.periode = periode;</span>
+<span class="nc" id="L45">        this.employee = employee;</span>
+<span class="nc" id="L46">        this.documentPath = documentPath;</span>
+<span class="nc" id="L47">    }</span>
+
+    public int getId() {
+<span class="fc" id="L50">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="fc" id="L54">        this.id = id;</span>
+<span class="fc" id="L55">    }</span>
+
+    public String getLeaveReason() {
+<span class="fc" id="L58">        return leaveReason;</span>
+    }
+
+    public void setLeaveReason(String leaveReason) {
+<span class="fc" id="L62">        this.leaveReason = leaveReason;</span>
+<span class="fc" id="L63">    }</span>
+
+    public Date getLeaveDate() {
+<span class="fc" id="L66">        return leaveDate;</span>
+    }
+
+    public void setLeaveDate(Date leaveDate) {
+<span class="fc" id="L70">        this.leaveDate = leaveDate;</span>
+<span class="fc" id="L71">    }</span>
+
+    public int getPeriode() {
+<span class="fc" id="L74">        return periode;</span>
+    }
+
+    public void setPeriode(int periode) {
+<span class="fc" id="L78">        this.periode = periode;</span>
+<span class="fc" id="L79">    }</span>
+
+    public String getDocumentPath() {
+<span class="fc" id="L82">        return documentPath;</span>
+    }
+
+    public void setDocumentPath(String documentPath) {
+<span class="fc" id="L86">        this.documentPath = documentPath;</span>
+<span class="fc" id="L87">    }</span>
+
+    public Status getStatus() {
+<span class="fc" id="L90">        return status;</span>
+    }
+
+    public void setStatus(Status status) {
+<span class="fc" id="L94">        this.status = status;</span>
+<span class="fc" id="L95">    }</span>
+
+    public Employee getEmployee() {
+<span class="fc" id="L98">        return employee;</span>
+    }
+
+    public void setEmployee(Employee employee) {
+<span class="fc" id="L102">        this.employee = employee;</span>
+<span class="fc" id="L103">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

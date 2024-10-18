@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EmailLoginModule.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">EmployeeTrackerV2</a> &gt; <a href="index.source.html" class="el_package">org.example.employeetrackerv2.security</a> &gt; <span class="el_source">EmailLoginModule.java</span></div><h1>EmailLoginModule.java</h1><pre class="source lang-java linenums">package org.example.employeetrackerv2.security;
+
+import org.example.employeetrackerv2.model.entity.User;
+import org.example.employeetrackerv2.dao.IUserDao;
+
+import javax.security.auth.Subject;
+import javax.security.auth.callback.*;
+import javax.security.auth.spi.LoginModule;
+import java.io.IOException;
+import java.util.Map;
+
+public class EmailLoginModule implements LoginModule {
+    private CallbackHandler callbackHandler;
+<span class="nc" id="L14">    private boolean authenticated = false;</span>
+    private String email;
+    private String password;
+    private IUserDao userDao;
+
+<span class="nc" id="L19">    public EmailLoginModule(IUserDao userDao) {</span>
+<span class="nc" id="L20">        this.userDao = userDao;</span>
+<span class="nc" id="L21">    }</span>
+
+    @Override
+    public void initialize(Subject subject, CallbackHandler callbackHandler, Map&lt;String, ?&gt; sharedState, Map&lt;String, ?&gt; options) {
+<span class="nc" id="L25">        this.callbackHandler = callbackHandler;</span>
+<span class="nc" id="L26">    }</span>
+
+    @Override
+    public boolean login() {
+<span class="nc" id="L30">        NameCallback nameCallback = new NameCallback(&quot;email&quot;);</span>
+<span class="nc" id="L31">        PasswordCallback passwordCallback = new PasswordCallback(&quot;password&quot;, false);</span>
+
+        try {
+<span class="nc" id="L34">            callbackHandler.handle(new Callback[]{nameCallback, passwordCallback});</span>
+<span class="nc" id="L35">            this.email = nameCallback.getName();</span>
+<span class="nc" id="L36">            this.password = new String(passwordCallback.getPassword());</span>
+<span class="nc" id="L37">        } catch (IOException | UnsupportedCallbackException e) {</span>
+<span class="nc" id="L38">            throw new RuntimeException(&quot;Error obtaining user credentials&quot;, e);</span>
+<span class="nc" id="L39">        }</span>
+
+<span class="nc bnc" id="L41" title="All 2 branches missed.">        if (authenticate(email, password)) {</span>
+<span class="nc" id="L42">            authenticated = true;</span>
+<span class="nc" id="L43">            return true;</span>
+        }
+
+<span class="nc" id="L46">        return false;</span>
+    }
+
+    @Override
+    public boolean commit() {
+<span class="nc" id="L51">        return authenticated;</span>
+    }
+
+    @Override
+    public boolean abort() {
+<span class="nc" id="L56">        authenticated = false;</span>
+<span class="nc" id="L57">        return false;</span>
+    }
+
+    @Override
+    public boolean logout() {
+<span class="nc" id="L62">        authenticated = false;</span>
+<span class="nc" id="L63">        return true;</span>
+    }
+
+    private boolean authenticate(String email, String password) {
+<span class="nc" id="L67">        User user = userDao.findByEmail(email);</span>
+<span class="nc bnc" id="L68" title="All 4 branches missed.">        return user != null &amp;&amp; user.getPassword().equals(password);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

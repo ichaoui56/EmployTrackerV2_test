@@ -9,7 +9,130 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ae0c9dc-9609-46e4-b3e9-0b0185bafdd2" name="Changes" comment="" />
+    <list default="true" id="3ae0c9dc-9609-46e4-b3e9-0b0185bafdd2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/config/JpaConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/config/JpaConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/IApplicationDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/IApplicationDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/IEmployeeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/IEmployeeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/ILeaveDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/ILeaveDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/IOfferDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/IOfferDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/IRecruiterDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/IRecruiterDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/IUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/impl/ApplicationDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/impl/ApplicationDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/impl/EmployeeDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/impl/EmployeeDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/impl/LeaveDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/impl/LeaveDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/impl/OfferDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/impl/OfferDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/impl/RecruiterDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/impl/RecruiterDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/dao/impl/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/init/DatabaseInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/init/DatabaseInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/EmployeeHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/EmployeeHistory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/Leave.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/Leave.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/LeaveHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/LeaveHistory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/Offer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/Offer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/Recruiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/Recruiter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/enums/JobType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/enums/JobType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/enums/OfferStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/enums/OfferStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/enums/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/enums/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/enums/Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/model/enums/Status.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/scheduler/OfferStatusUpdater.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/scheduler/OfferStatusUpdater.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/security/EmailLoginModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/security/EmailLoginModule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/seeder/AdminSeeder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/seeder/AdminSeeder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/IApplicationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/IApplicationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/IEmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/IEmployeeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/ILeaveService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/ILeaveService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/IOfferService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/IOfferService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/IRecruiterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/IRecruiterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/impl/ApplicationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/impl/ApplicationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/impl/EmployeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/impl/EmployeeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/impl/LeaveServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/impl/LeaveServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/impl/OfferServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/impl/OfferServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/impl/RecruiterServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/impl/RecruiterServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/servlet/AccessFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/servlet/AccessFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/servlet/ApplicationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/servlet/ApplicationServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/servlet/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/servlet/AuthServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/servlet/EmployeeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/servlet/EmployeeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/servlet/LeaveServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/servlet/LeaveServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/servlet/OfferServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/servlet/OfferServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/smtp/NotificationService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/smtp/NotificationService$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/smtp/NotificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/WEB-INF/classes/org/example/employeetrackerv2/smtp/NotificationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/uploads/1729111032391_ilyasChaouiCv.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/uploads/1729112996733_ilyasChaouiCv.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/uploads/1729113566438_ilyasChaouiCv.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/uploads/1729115337346_ilyasChaouiCv.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/uploads/1729116257634_ilyasChaouiCv.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmployeeTrackerV2-1.0-SNAPSHOT/uploads/1729242726640_Servlet JSP.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/config/JpaConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/config/JpaConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/IApplicationDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/IApplicationDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/IEmployeeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/IEmployeeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/ILeaveDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/ILeaveDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/IOfferDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/IOfferDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/IRecruiterDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/IRecruiterDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/IUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/impl/ApplicationDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/impl/ApplicationDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/impl/EmployeeDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/impl/EmployeeDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/impl/LeaveDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/impl/LeaveDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/impl/OfferDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/impl/OfferDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/impl/RecruiterDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/impl/RecruiterDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/dao/impl/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/init/DatabaseInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/init/DatabaseInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/EmployeeHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/EmployeeHistory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/Leave.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/Leave.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/LeaveHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/LeaveHistory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/Offer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/Offer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/Recruiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/Recruiter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/enums/JobType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/enums/JobType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/enums/OfferStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/enums/OfferStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/enums/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/enums/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/enums/Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/model/enums/Status.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/scheduler/OfferStatusUpdater.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/scheduler/OfferStatusUpdater.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/security/EmailLoginModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/security/EmailLoginModule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/seeder/AdminSeeder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/seeder/AdminSeeder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/IApplicationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/IApplicationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/IEmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/IEmployeeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/ILeaveService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/ILeaveService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/IOfferService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/IOfferService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/IRecruiterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/IRecruiterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/impl/ApplicationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/impl/ApplicationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/impl/EmployeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/impl/EmployeeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/impl/LeaveServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/impl/LeaveServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/impl/OfferServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/impl/OfferServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/impl/RecruiterServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/impl/RecruiterServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/servlet/AccessFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/servlet/AccessFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/servlet/ApplicationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/servlet/ApplicationServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/servlet/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/servlet/AuthServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/servlet/EmployeeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/servlet/EmployeeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/servlet/LeaveServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/servlet/LeaveServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/servlet/OfferServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/servlet/OfferServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/smtp/NotificationService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/smtp/NotificationService$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/smtp/NotificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/employeetrackerv2/smtp/NotificationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/employeetrackerv2/service/ApplicationServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/employeetrackerv2/service/ApplicationServiceImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/employeetrackerv2/service/EmployeeServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/employeetrackerv2/service/EmployeeServiceImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/employeetrackerv2/service/LeaveServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/employeetrackerv2/service/LeaveServiceImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/employeetrackerv2/service/OfferServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/employeetrackerv2/service/OfferServiceImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/employeetrackerv2/service/RecruiterServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/employeetrackerv2/service/RecruiterServiceImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/employeetrackerv2/service/UserServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/employeetrackerv2/service/UserServiceImplTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,9 +160,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.ApplicationServiceImplTest.executor": "Run",
+    "JUnit.EmployeeServiceImplTest.executor": "Run",
+    "JUnit.LeaveServiceImplTest.executor": "Run",
+    "JUnit.OfferServiceImplTest.executor": "Run",
+    "JUnit.RecruiterServiceImplTest.executor": "Run",
+    "JUnit.UserServiceImplTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Tomcat Server.Tomcat 10.1.30.executor": "Run",
-    "git-widget-placeholder": "JET-1-cloner-la-gestionnaire-Employ-s-en-JEE-V2-dans-mon-projet-actuel",
+    "git-widget-placeholder": "JET-2-ajouter-jaccoco-pour-la-couverture-des-tests",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/mac/Documents/GitHub/EmployTrackerV2_test",
     "node.js.detected.package.eslint": "true",
@@ -50,7 +179,82 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.UserServiceImplTest">
+    <configuration name="EmployeeServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EmployeeTrackerV2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.employeetrackerv2.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.employeetrackerv2.service" />
+      <option name="MAIN_CLASS_NAME" value="org.example.employeetrackerv2.service.EmployeeServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeaveServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EmployeeTrackerV2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.employeetrackerv2.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.employeetrackerv2.service" />
+      <option name="MAIN_CLASS_NAME" value="org.example.employeetrackerv2.service.LeaveServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OfferServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EmployeeTrackerV2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.employeetrackerv2.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.employeetrackerv2.service" />
+      <option name="MAIN_CLASS_NAME" value="org.example.employeetrackerv2.service.OfferServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RecruiterServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EmployeeTrackerV2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.employeetrackerv2.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.employeetrackerv2.service" />
+      <option name="MAIN_CLASS_NAME" value="org.example.employeetrackerv2.service.RecruiterServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EmployeeTrackerV2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.employeetrackerv2.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.employeetrackerv2.service" />
+      <option name="MAIN_CLASS_NAME" value="org.example.employeetrackerv2.service.UserServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="EmployTrackerV2_test" />
       <method v="2">
@@ -153,6 +357,23 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.EmployeeServiceImplTest" />
+      <item itemvalue="JUnit.LeaveServiceImplTest" />
+      <item itemvalue="JUnit.OfferServiceImplTest" />
+      <item itemvalue="JUnit.RecruiterServiceImplTest" />
+      <item itemvalue="JUnit.UserServiceImplTest" />
+      <item itemvalue="Tomcat Server.Tomcat 10.1.30" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserServiceImplTest" />
+        <item itemvalue="JUnit.RecruiterServiceImplTest" />
+        <item itemvalue="JUnit.OfferServiceImplTest" />
+        <item itemvalue="JUnit.LeaveServiceImplTest" />
+        <item itemvalue="JUnit.EmployeeServiceImplTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -170,7 +391,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1729245758157</updated>
-      <workItem from="1729245759317" duration="2189000" />
+      <workItem from="1729245759317" duration="3567000" />
     </task>
     <servers />
   </component>

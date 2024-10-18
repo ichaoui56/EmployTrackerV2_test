@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Offer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">EmployeeTrackerV2</a> &gt; <a href="index.source.html" class="el_package">org.example.employeetrackerv2.model.entity</a> &gt; <span class="el_source">Offer.java</span></div><h1>Offer.java</h1><pre class="source lang-java linenums">package org.example.employeetrackerv2.model.entity;
+
+import jakarta.persistence.*;
+import org.example.employeetrackerv2.model.enums.JobType;
+import org.example.employeetrackerv2.model.enums.OfferStatus;
+
+import java.util.Date;
+import java.util.List;
+
+@Entity
+public class Offer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = &quot;id&quot;, nullable = false)
+    private int id;
+
+    @Column(name = &quot;company_name&quot;, nullable = false, length = 255)
+    private String companyName;
+
+    @Column(name = &quot;location&quot;, nullable = false, length = 255)
+    private String location;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = &quot;job_type&quot;, nullable = false, length = 255)
+    private JobType jobType;
+
+    @Column(name = &quot;experience&quot;, nullable = false, length = 255)
+    private String experience;
+
+    @Column(name = &quot;qualifications&quot;, nullable = false, length = 255)
+    private String qualifications;
+
+    @Column(name = &quot;salary&quot;, nullable = false, length = 50)
+    private String salary;
+
+    @Column(name = &quot;date_posted&quot;, nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date datePosted;
+
+    @Column(name = &quot;date_finished&quot;, nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date dateFinished;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = &quot;status&quot;, nullable = false)
+    private OfferStatus status;
+
+    @ManyToOne
+    @JoinColumn(name = &quot;recruiter_id&quot;, nullable = false)
+    private Recruiter recruiter;
+
+    @OneToMany(mappedBy = &quot;offer&quot;, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List&lt;Application&gt; applications;
+
+<span class="nc" id="L56">    public Offer() {}</span>
+
+    public Offer(String companyName,  String location, JobType jobType, String experience,
+<span class="fc" id="L59">                 String qualifications, String salary,Date dateFinished, Date datePosted, Recruiter recruiter) {</span>
+<span class="fc" id="L60">        this.companyName = companyName;</span>
+<span class="fc" id="L61">        this.location = location;</span>
+<span class="fc" id="L62">        this.jobType = jobType;</span>
+<span class="fc" id="L63">        this.experience = experience;</span>
+<span class="fc" id="L64">        this.qualifications = qualifications;</span>
+<span class="fc" id="L65">        this.salary = salary;</span>
+<span class="fc" id="L66">        this.dateFinished = dateFinished;</span>
+<span class="fc" id="L67">        this.datePosted = datePosted;</span>
+<span class="fc" id="L68">        this.recruiter = recruiter;</span>
+<span class="fc" id="L69">        this.status = OfferStatus.ACTIVE;</span>
+<span class="fc" id="L70">    }</span>
+
+    public int getId() {
+<span class="nc" id="L73">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="fc" id="L77">        this.id = id;</span>
+<span class="fc" id="L78">    }</span>
+
+    public String getCompanyName() {
+<span class="nc" id="L81">        return companyName;</span>
+    }
+
+    public void setCompanyName(String companyName) {
+<span class="nc" id="L85">        this.companyName = companyName;</span>
+<span class="nc" id="L86">    }</span>
+
+    public String getLocation() {
+<span class="nc" id="L89">        return location;</span>
+    }
+
+    public void setLocation(String location) {
+<span class="nc" id="L93">        this.location = location;</span>
+<span class="nc" id="L94">    }</span>
+
+    public JobType getJobType() {
+<span class="nc" id="L97">        return jobType;</span>
+    }
+
+    public void setJobType(JobType jobType) {
+<span class="nc" id="L101">        this.jobType = jobType;</span>
+<span class="nc" id="L102">    }</span>
+
+    public String getExperience() {
+<span class="nc" id="L105">        return experience;</span>
+    }
+
+    public void setExperience(String experience) {
+<span class="nc" id="L109">        this.experience = experience;</span>
+<span class="nc" id="L110">    }</span>
+
+    public OfferStatus getStatus() {
+<span class="nc" id="L113">        return status;</span>
+    }
+
+    public void setStatus(OfferStatus status) {
+<span class="nc" id="L117">        this.status = status;</span>
+<span class="nc" id="L118">    }</span>
+
+    public String getQualifications() {
+<span class="nc" id="L121">        return qualifications;</span>
+    }
+
+    public void setQualifications(String qualifications) {
+<span class="nc" id="L125">        this.qualifications = qualifications;</span>
+<span class="nc" id="L126">    }</span>
+
+    public String getSalary() {
+<span class="nc" id="L129">        return salary;</span>
+    }
+
+    public void setSalary(String salary) {
+<span class="nc" id="L133">        this.salary = salary;</span>
+<span class="nc" id="L134">    }</span>
+
+    public Date getDatePosted() {
+<span class="nc" id="L137">        return datePosted;</span>
+    }
+
+    public void setDatePosted(Date datePosted) {
+<span class="nc" id="L141">        this.datePosted = datePosted;</span>
+<span class="nc" id="L142">    }</span>
+
+    public Date getDateFinished() {
+<span class="nc" id="L145">        return dateFinished;</span>
+    }
+
+    public void setDateFinished(Date dateFinished) {
+<span class="nc" id="L149">        this.dateFinished = dateFinished;</span>
+<span class="nc" id="L150">    }</span>
+
+    public Recruiter getRecruiter() {
+<span class="nc" id="L153">        return recruiter;</span>
+    }
+
+    public void setRecruiter(Recruiter recruiter) {
+<span class="nc" id="L157">        this.recruiter = recruiter;</span>
+<span class="nc" id="L158">    }</span>
+
+    public List&lt;Application&gt; getApplications() {
+<span class="nc" id="L161">        return applications;</span>
+    }
+
+    public void setApplications(List&lt;Application&gt; applications) {
+<span class="nc" id="L165">        this.applications = applications;</span>
+<span class="nc" id="L166">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
