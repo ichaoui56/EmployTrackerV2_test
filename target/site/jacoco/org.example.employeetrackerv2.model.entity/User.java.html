@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>User.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">EmployeeTrackerV2</a> &gt; <a href="index.source.html" class="el_package">org.example.employeetrackerv2.model.entity</a> &gt; <span class="el_source">User.java</span></div><h1>User.java</h1><pre class="source lang-java linenums">package org.example.employeetrackerv2.model.entity;
+
+import org.example.employeetrackerv2.model.enums.Role;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = &quot;appUser&quot;)
+@Inheritance(strategy = InheritanceType.JOINED)
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = &quot;id&quot;, nullable = false, updatable = false)
+    private int id;
+
+    @Column(name = &quot;name&quot;, nullable = false, length = 100)
+    private String name;
+
+    @Column(name = &quot;email&quot;, unique = true, nullable = false, length = 150)
+    private String email;
+
+    @Column(name = &quot;password&quot;, nullable = false, length = 255)
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = &quot;role&quot;, nullable = false, length = 50)
+    private Role role;
+
+<span class="fc" id="L30">    public User() {}</span>
+
+<span class="fc" id="L32">    public User(String name, String email, String password, Role role) {</span>
+<span class="fc" id="L33">        this.name = name;</span>
+<span class="fc" id="L34">        this.email = email;</span>
+<span class="fc" id="L35">        this.password = password;</span>
+<span class="fc" id="L36">        this.role = role;</span>
+<span class="fc" id="L37">    }</span>
+
+    public int getId() {
+<span class="fc" id="L40">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="fc" id="L44">        this.id = id;</span>
+<span class="fc" id="L45">    }</span>
+
+    public String getName() {
+<span class="fc" id="L48">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="fc" id="L52">        this.name = name;</span>
+<span class="fc" id="L53">    }</span>
+
+    public String getEmail() {
+<span class="fc" id="L56">        return email;</span>
+    }
+
+    public void setEmail(String email) {
+<span class="fc" id="L60">        this.email = email;</span>
+<span class="fc" id="L61">    }</span>
+
+    public String getPassword() {
+<span class="fc" id="L64">        return password;</span>
+    }
+
+    public void setPassword(String password) {
+<span class="nc" id="L68">        this.password = password;</span>
+<span class="nc" id="L69">    }</span>
+
+    public Role getRole() {
+<span class="nc" id="L72">        return role;</span>
+    }
+
+    public void setRole(Role role) {
+<span class="nc" id="L76">        this.role = role;</span>
+<span class="nc" id="L77">    }</span>
+
+    public String getFirstLetter() {
+<span class="nc bnc" id="L80" title="All 4 branches missed.">        return (name != null &amp;&amp; !name.isEmpty()) ? name.substring(0, 1).toUpperCase() : &quot;&quot;;</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

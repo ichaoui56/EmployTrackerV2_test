@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EmployeeHistory.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">EmployeeTrackerV2</a> &gt; <a href="index.source.html" class="el_package">org.example.employeetrackerv2.model.entity</a> &gt; <span class="el_source">EmployeeHistory.java</span></div><h1>EmployeeHistory.java</h1><pre class="source lang-java linenums">package org.example.employeetrackerv2.model.entity;
+
+import jakarta.persistence.*;
+import java.util.Date;
+
+@Entity
+public class EmployeeHistory {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = &quot;employee_id&quot;, nullable = false)
+    private Employee employee;
+
+    @Column(name = &quot;modified_at&quot;, nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date modifiedAt;
+
+    @Column(name = &quot;modification_details&quot;, nullable = false, length = 1000)
+    private String modificationDetails;
+
+    @Column(name = &quot;modified_by&quot;, nullable = false, length = 100)
+    private String modifiedBy;
+
+    // Default constructor
+<span class="fc" id="L28">    public EmployeeHistory() {}</span>
+
+    // Full constructor with all fields
+<span class="nc" id="L31">    public EmployeeHistory(Employee employee, String modificationDetails, String modifiedBy) {</span>
+<span class="nc" id="L32">        this.employee = employee;</span>
+<span class="nc" id="L33">        this.modifiedAt = new Date(); // Automatically sets the current timestamp when the history is created</span>
+<span class="nc" id="L34">        this.modificationDetails = modificationDetails;</span>
+<span class="nc" id="L35">        this.modifiedBy = modifiedBy;</span>
+<span class="nc" id="L36">    }</span>
+
+    // Getters and Setters
+
+    public Long getId() {
+<span class="nc" id="L41">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="nc" id="L45">        this.id = id;</span>
+<span class="nc" id="L46">    }</span>
+
+    public Employee getEmployee() {
+<span class="nc" id="L49">        return employee;</span>
+    }
+
+    public void setEmployee(Employee employee) {
+<span class="fc" id="L53">        this.employee = employee;</span>
+<span class="fc" id="L54">    }</span>
+
+    public Date getModifiedAt() {
+<span class="nc" id="L57">        return modifiedAt;</span>
+    }
+
+    public void setModifiedAt(Date modifiedAt) {
+<span class="nc" id="L61">        this.modifiedAt = modifiedAt;</span>
+<span class="nc" id="L62">    }</span>
+
+    public String getModificationDetails() {
+<span class="nc" id="L65">        return modificationDetails;</span>
+    }
+
+    public void setModificationDetails(String modificationDetails) {
+<span class="fc" id="L69">        this.modificationDetails = modificationDetails;</span>
+<span class="fc" id="L70">    }</span>
+
+    public String getModifiedBy() {
+<span class="nc" id="L73">        return modifiedBy;</span>
+    }
+
+    public void setModifiedBy(String modifiedBy) {
+<span class="nc" id="L77">        this.modifiedBy = modifiedBy;</span>
+<span class="nc" id="L78">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
