@@ -105,7 +105,7 @@
                     </c:choose>
 
                     <div class="dropdown-menu dd-menu dropdown-menu-end bg-white rounded shadow border-0 mt-3">
-                        <a href="candidate-profile.html" class="dropdown-item fw-medium fs-6"><i data-feather="user"
+                        <a href="employee?action=displayProfile" class="dropdown-item fw-medium fs-6"><i data-feather="user"
                                                                                                  class="fea icon-sm me-2 align-middle"></i>Profile</a>
                         <a href="candidate-profile-setting.html" class="dropdown-item fw-medium fs-6"><i
                                 data-feather="settings" class="fea icon-sm me-2 align-middle"></i>Settings</a>

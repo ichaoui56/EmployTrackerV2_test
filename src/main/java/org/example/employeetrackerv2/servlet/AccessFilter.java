@@ -2,7 +2,6 @@ package org.example.employeetrackerv2.servlet;
 
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
-import jakarta.servlet.FilterConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
@@ -37,6 +36,7 @@ public class AccessFilter implements Filter {
             chain.doFilter(request, response);
             return;
         }
+
         if (!isLoggedIn) {
             if (requestURI.equals(contextPath + "/") ||
                     requestURI.equals(contextPath + "/auth") ||
@@ -53,7 +53,6 @@ public class AccessFilter implements Filter {
             }
         }
 
-
         if (isLoggedIn) {
             if (requestURI.equals(contextPath + "/auth") && "logout".equals(httpRequest.getParameter("action"))) {
                 chain.doFilter(request, response);
@@ -69,19 +68,21 @@ public class AccessFilter implements Filter {
                 return;
             }
 
-            if (requestURI.equals(contextPath + "/dashboard.jsp") || requestURI.equals(contextPath + "/employee")) {
+            if (requestURI.equals(contextPath + "/dashboard.jsp")) {
                 if (!isAdmin) {
                     httpResponse.sendRedirect(contextPath + "/auth?action=login");
                     return;
                 }
             }
 
+            if (requestURI.equals(contextPath + "/employee") && "displayProfile".equals(httpRequest.getParameter("action"))) {
+                chain.doFilter(request, response);
+                return;
+            }
+
             chain.doFilter(request, response);
             return;
         }
-
-
-
         httpResponse.sendRedirect(contextPath + "/404.jsp");
     }
 }

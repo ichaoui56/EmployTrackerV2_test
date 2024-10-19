@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.example.employeetrackerv2.dao.IEmployeeDao;
 import org.example.employeetrackerv2.dao.IRecruiterDao;
 import org.example.employeetrackerv2.dao.impl.EmployeeDaoImpl;
@@ -12,6 +13,7 @@ import org.example.employeetrackerv2.dao.impl.RecruiterDaoImpl;
 import org.example.employeetrackerv2.model.entity.Employee;
 import org.example.employeetrackerv2.model.entity.EmployeeHistory;
 import org.example.employeetrackerv2.model.entity.Recruiter;
+import org.example.employeetrackerv2.model.entity.User;
 import org.example.employeetrackerv2.model.enums.Role;
 import org.example.employeetrackerv2.service.IEmployeeService;
 import org.example.employeetrackerv2.service.IRecruiterService;
@@ -25,7 +27,7 @@ import java.util.Date;
 import java.util.List;
 
 @WebServlet(&quot;/employee&quot;)
-<span class="nc" id="L28">public class EmployeeServlet extends HttpServlet {</span>
+<span class="nc" id="L30">public class EmployeeServlet extends HttpServlet {</span>
 
     private IEmployeeDao employeeDao;
     private IEmployeeService employeeService;
@@ -34,168 +36,185 @@ import java.util.List;
 
     @Override
     public void init() throws ServletException {
-<span class="nc" id="L37">        super.init();</span>
-<span class="nc" id="L38">        employeeDao = new EmployeeDaoImpl();</span>
-<span class="nc" id="L39">        employeeService = new EmployeeServiceImpl(employeeDao);</span>
-<span class="nc" id="L40">        recruiterDao = new RecruiterDaoImpl();</span>
-<span class="nc" id="L41">        recruiterService = new RecruiterServiceImpl(recruiterDao);</span>
-<span class="nc" id="L42">    }</span>
+<span class="nc" id="L39">        super.init();</span>
+<span class="nc" id="L40">        employeeDao = new EmployeeDaoImpl();</span>
+<span class="nc" id="L41">        employeeService = new EmployeeServiceImpl(employeeDao);</span>
+<span class="nc" id="L42">        recruiterDao = new RecruiterDaoImpl();</span>
+<span class="nc" id="L43">        recruiterService = new RecruiterServiceImpl(recruiterDao);</span>
+<span class="nc" id="L44">    }</span>
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-<span class="nc" id="L46">        String action = req.getParameter(&quot;action&quot;);</span>
+<span class="nc" id="L48">        String action = req.getParameter(&quot;action&quot;);</span>
 
-<span class="nc bnc" id="L48" title="All 5 branches missed.">        switch (action) {</span>
+<span class="nc bnc" id="L50" title="All 6 branches missed.">        switch (action) {</span>
             case &quot;addForm&quot;:
-<span class="nc" id="L50">                addForm(req, resp);</span>
-<span class="nc" id="L51">                break;</span>
+<span class="nc" id="L52">                addForm(req, resp);</span>
+<span class="nc" id="L53">                break;</span>
             case &quot;employeeList&quot;:
-<span class="nc" id="L53">                employeeList(req, resp);</span>
-<span class="nc" id="L54">                break;</span>
+<span class="nc" id="L55">                employeeList(req, resp);</span>
+<span class="nc" id="L56">                break;</span>
             case &quot;delete&quot;:
-<span class="nc" id="L56">                deleteEmployee(req, resp);</span>
-<span class="nc" id="L57">                break;</span>
+<span class="nc" id="L58">                deleteEmployee(req, resp);</span>
+<span class="nc" id="L59">                break;</span>
             case &quot;updateForm&quot;:
-<span class="nc" id="L59">                showUpdateForm(req, resp);</span>
-<span class="nc" id="L60">                break;</span>
+<span class="nc" id="L61">                showUpdateForm(req, resp);</span>
+<span class="nc" id="L62">                break;</span>
+            case &quot;displayProfile&quot;:
+<span class="nc" id="L64">                displayProfile(req, resp);</span>
+<span class="nc" id="L65">                break;</span>
             default:
-<span class="nc" id="L62">                employeeList(req, resp);</span>
+<span class="nc" id="L67">                employeeList(req, resp);</span>
                 break;
         }
-<span class="nc" id="L65">    }</span>
+<span class="nc" id="L70">    }</span>
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-<span class="nc" id="L69">        String action = req.getParameter(&quot;action&quot;);</span>
+<span class="nc" id="L74">        String action = req.getParameter(&quot;action&quot;);</span>
 
-<span class="nc bnc" id="L71" title="All 3 branches missed.">        switch (action) {</span>
+<span class="nc bnc" id="L76" title="All 3 branches missed.">        switch (action) {</span>
             case &quot;insert&quot;:
-<span class="nc" id="L73">                insertUser(req, resp);</span>
-<span class="nc" id="L74">                break;</span>
+<span class="nc" id="L78">                insertUser(req, resp);</span>
+<span class="nc" id="L79">                break;</span>
             case &quot;update&quot;:
-<span class="nc" id="L76">                updateEmployee(req, resp);</span>
-<span class="nc" id="L77">                break;</span>
+<span class="nc" id="L81">                updateEmployee(req, resp);</span>
+<span class="nc" id="L82">                break;</span>
             default:
-<span class="nc" id="L79">                resp.sendError(HttpServletResponse.SC_BAD_REQUEST, &quot;Invalid action&quot;);</span>
+<span class="nc" id="L84">                resp.sendError(HttpServletResponse.SC_BAD_REQUEST, &quot;Invalid action&quot;);</span>
                 break;
         }
-<span class="nc" id="L82">    }</span>
+<span class="nc" id="L87">    }</span>
 
     private void addForm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-<span class="nc" id="L85">        req.getRequestDispatcher(&quot;WEB-INF/views/forms/addEmployeeForm.jsp&quot;).forward(req, resp);</span>
-<span class="nc" id="L86">    }</span>
+<span class="nc" id="L90">        req.getRequestDispatcher(&quot;WEB-INF/views/forms/addEmployeeForm.jsp&quot;).forward(req, resp);</span>
+<span class="nc" id="L91">    }</span>
+
+    private void displayProfile(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+<span class="nc" id="L94">        HttpSession session = req.getSession();</span>
+<span class="nc" id="L95">        User loggedUser = (User) session.getAttribute(&quot;user&quot;);</span>
+
+<span class="nc" id="L97">        req.setAttribute(&quot;loggedUser&quot;, loggedUser);</span>
+
+<span class="nc bnc" id="L99" title="All 2 branches missed.">        if (loggedUser instanceof Employee) {</span>
+<span class="nc" id="L100">            Employee employee = (Employee) loggedUser;</span>
+<span class="nc" id="L101">            Employee loggedEmployee = employeeService.findEmployeeById(employee.getId());</span>
+<span class="nc" id="L102">            req.setAttribute(&quot;employee&quot;, employee);</span>
+        }
+<span class="nc" id="L104">        req.getRequestDispatcher(&quot;WEB-INF/views/lists/userProfil.jsp&quot;).forward(req, resp);</span>
+<span class="nc" id="L105">    }</span>
 
     private void employeeList(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-<span class="nc" id="L89">        List&lt;Employee&gt; employees = employeeService.getAllEmployees();</span>
-<span class="nc" id="L90">        req.setAttribute(&quot;employees&quot;, employees);</span>
-<span class="nc" id="L91">        req.getRequestDispatcher(&quot;WEB-INF/views/lists/employeeList.jsp&quot;).forward(req, resp);</span>
-<span class="nc" id="L92">    }</span>
+<span class="nc" id="L108">        List&lt;Employee&gt; employees = employeeService.getAllEmployees();</span>
+<span class="nc" id="L109">        req.setAttribute(&quot;employees&quot;, employees);</span>
+<span class="nc" id="L110">        req.getRequestDispatcher(&quot;WEB-INF/views/lists/employeeList.jsp&quot;).forward(req, resp);</span>
+<span class="nc" id="L111">    }</span>
 
     private void showUpdateForm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-<span class="nc" id="L95">        int employeeId = Integer.parseInt(req.getParameter(&quot;id&quot;));</span>
-<span class="nc" id="L96">        Employee employee = employeeService.findEmployeeById(employeeId);</span>
-<span class="nc" id="L97">        req.setAttribute(&quot;employee&quot;, employee);</span>
-<span class="nc" id="L98">        req.getRequestDispatcher(&quot;WEB-INF/views/forms/updateEmployeeForm.jsp&quot;).forward(req, resp);</span>
-<span class="nc" id="L99">    }</span>
+<span class="nc" id="L114">        int employeeId = Integer.parseInt(req.getParameter(&quot;id&quot;));</span>
+<span class="nc" id="L115">        Employee employee = employeeService.findEmployeeById(employeeId);</span>
+<span class="nc" id="L116">        req.setAttribute(&quot;employee&quot;, employee);</span>
+<span class="nc" id="L117">        req.getRequestDispatcher(&quot;WEB-INF/views/forms/updateEmployeeForm.jsp&quot;).forward(req, resp);</span>
+<span class="nc" id="L118">    }</span>
 
     private void insertUser(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-<span class="nc" id="L103">            String name = req.getParameter(&quot;name&quot;);</span>
-<span class="nc" id="L104">            String email = req.getParameter(&quot;email&quot;);</span>
-<span class="nc" id="L105">            String password = req.getParameter(&quot;password&quot;);</span>
-<span class="nc" id="L106">            Role role = Role.valueOf(req.getParameter(&quot;role&quot;));</span>
-<span class="nc" id="L107">            String socialNumber = req.getParameter(&quot;socialNumber&quot;);</span>
-<span class="nc" id="L108">            String department = req.getParameter(&quot;department&quot;);</span>
-<span class="nc" id="L109">            String poste = req.getParameter(&quot;poste&quot;);</span>
-<span class="nc" id="L110">            long salary = Long.parseLong(req.getParameter(&quot;salary&quot;));</span>
-<span class="nc" id="L111">            int childNumber = Integer.parseInt(req.getParameter(&quot;childNumber&quot;));</span>
-<span class="nc" id="L112">            Date birthDate = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).parse(req.getParameter(&quot;birthDate&quot;));</span>
-<span class="nc" id="L113">            Date startDate = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).parse(req.getParameter(&quot;startDate&quot;));</span>
+<span class="nc" id="L122">            String name = req.getParameter(&quot;name&quot;);</span>
+<span class="nc" id="L123">            String email = req.getParameter(&quot;email&quot;);</span>
+<span class="nc" id="L124">            String password = req.getParameter(&quot;password&quot;);</span>
+<span class="nc" id="L125">            Role role = Role.valueOf(req.getParameter(&quot;role&quot;));</span>
+<span class="nc" id="L126">            String socialNumber = req.getParameter(&quot;socialNumber&quot;);</span>
+<span class="nc" id="L127">            String department = req.getParameter(&quot;department&quot;);</span>
+<span class="nc" id="L128">            String poste = req.getParameter(&quot;poste&quot;);</span>
+<span class="nc" id="L129">            long salary = Long.parseLong(req.getParameter(&quot;salary&quot;));</span>
+<span class="nc" id="L130">            int childNumber = Integer.parseInt(req.getParameter(&quot;childNumber&quot;));</span>
+<span class="nc" id="L131">            Date birthDate = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).parse(req.getParameter(&quot;birthDate&quot;));</span>
+<span class="nc" id="L132">            Date startDate = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).parse(req.getParameter(&quot;startDate&quot;));</span>
 
 
-<span class="nc" id="L116">            double allowance = employeeService.calculateFamilyAllowance(childNumber, salary);</span>
+<span class="nc" id="L135">            double allowance = employeeService.calculateFamilyAllowance(childNumber, salary);</span>
 
 
-<span class="nc bnc" id="L119" title="All 2 branches missed.">           if (role == Role.EMPLOYEE){</span>
-<span class="nc" id="L120">               Employee employee = new Employee(</span>
+<span class="nc bnc" id="L138" title="All 2 branches missed.">           if (role == Role.EMPLOYEE){</span>
+<span class="nc" id="L139">               Employee employee = new Employee(</span>
                        name, email, password, role, birthDate, socialNumber, startDate, salary, childNumber, department, poste, allowance
                );
-<span class="nc" id="L123">               employeeService.insert(employee);</span>
+<span class="nc" id="L142">               employeeService.insert(employee);</span>
 
-<span class="nc" id="L125">               String modificationDetails = &quot;Added new employee with name: &quot; + employee.getName();</span>
-<span class="nc" id="L126">               EmployeeHistory history = new EmployeeHistory(employee, modificationDetails, &quot;admin&quot;);</span>
-<span class="nc" id="L127">               employeeService.addEmployeeHistory(history);</span>
-<span class="nc bnc" id="L128" title="All 2 branches missed.">           } else if (role == Role.RECRUITER){</span>
-<span class="nc" id="L129">               Recruiter recruiter = new Recruiter(</span>
+<span class="nc" id="L144">               String modificationDetails = &quot;Added new employee with name: &quot; + employee.getName();</span>
+<span class="nc" id="L145">               EmployeeHistory history = new EmployeeHistory(employee, modificationDetails, &quot;admin&quot;);</span>
+<span class="nc" id="L146">               employeeService.addEmployeeHistory(history);</span>
+<span class="nc bnc" id="L147" title="All 2 branches missed.">           } else if (role == Role.RECRUITER){</span>
+<span class="nc" id="L148">               Recruiter recruiter = new Recruiter(</span>
                        name, email, password, role
                );
-<span class="nc" id="L132">               recruiterService.insertUser(recruiter);</span>
+<span class="nc" id="L151">               recruiterService.insertUser(recruiter);</span>
            }
 
-<span class="nc" id="L135">            resp.sendRedirect(&quot;employee?action=employeeList&quot;);</span>
-<span class="nc" id="L136">        } catch (ParseException e) {</span>
-<span class="nc" id="L137">            e.printStackTrace();</span>
-<span class="nc" id="L138">            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, &quot;Invalid date format&quot;);</span>
-<span class="nc" id="L139">        } catch (NumberFormatException e) {</span>
-<span class="nc" id="L140">            e.printStackTrace();</span>
-<span class="nc" id="L141">            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, &quot;Invalid number format&quot;);</span>
-<span class="nc" id="L142">        }</span>
-<span class="nc" id="L143">    }</span>
+<span class="nc" id="L154">            resp.sendRedirect(&quot;employee?action=employeeList&quot;);</span>
+<span class="nc" id="L155">        } catch (ParseException e) {</span>
+<span class="nc" id="L156">            e.printStackTrace();</span>
+<span class="nc" id="L157">            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, &quot;Invalid date format&quot;);</span>
+<span class="nc" id="L158">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L159">            e.printStackTrace();</span>
+<span class="nc" id="L160">            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, &quot;Invalid number format&quot;);</span>
+<span class="nc" id="L161">        }</span>
+<span class="nc" id="L162">    }</span>
 
     private void deleteEmployee(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-<span class="nc" id="L147">            int employeeId = Integer.parseInt(req.getParameter(&quot;id&quot;));</span>
-<span class="nc" id="L148">            employeeService.delete(employeeId);</span>
+<span class="nc" id="L166">            int employeeId = Integer.parseInt(req.getParameter(&quot;id&quot;));</span>
+<span class="nc" id="L167">            employeeService.delete(employeeId);</span>
 
-<span class="nc" id="L150">            resp.sendRedirect(&quot;employee?action=employeeList&quot;);</span>
-<span class="nc" id="L151">        } catch (NumberFormatException e) {</span>
-<span class="nc" id="L152">            e.printStackTrace();</span>
-<span class="nc" id="L153">            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, &quot;Invalid employee ID&quot;);</span>
-<span class="nc" id="L154">        }</span>
-<span class="nc" id="L155">    }</span>
+<span class="nc" id="L169">            resp.sendRedirect(&quot;employee?action=employeeList&quot;);</span>
+<span class="nc" id="L170">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L171">            e.printStackTrace();</span>
+<span class="nc" id="L172">            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, &quot;Invalid employee ID&quot;);</span>
+<span class="nc" id="L173">        }</span>
+<span class="nc" id="L174">    }</span>
 
     private void updateEmployee(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-<span class="nc" id="L159">            int id = Integer.parseInt(req.getParameter(&quot;id&quot;));</span>
-<span class="nc" id="L160">            String name = req.getParameter(&quot;name&quot;);</span>
-<span class="nc" id="L161">            String email = req.getParameter(&quot;email&quot;);</span>
-<span class="nc" id="L162">            String password = req.getParameter(&quot;password&quot;);</span>
-<span class="nc" id="L163">            String socialNumber = req.getParameter(&quot;socialNumber&quot;);</span>
-<span class="nc" id="L164">            String department = req.getParameter(&quot;department&quot;);</span>
-<span class="nc" id="L165">            String poste = req.getParameter(&quot;poste&quot;);</span>
-<span class="nc" id="L166">            long salary = Long.parseLong(req.getParameter(&quot;salary&quot;));</span>
-<span class="nc" id="L167">            int childNumber = Integer.parseInt(req.getParameter(&quot;childNumber&quot;));</span>
-<span class="nc" id="L168">            Date birthDate = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).parse(req.getParameter(&quot;birthDate&quot;));</span>
-<span class="nc" id="L169">            Date startDate = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).parse(req.getParameter(&quot;startDate&quot;));</span>
+<span class="nc" id="L178">            int id = Integer.parseInt(req.getParameter(&quot;id&quot;));</span>
+<span class="nc" id="L179">            String name = req.getParameter(&quot;name&quot;);</span>
+<span class="nc" id="L180">            String email = req.getParameter(&quot;email&quot;);</span>
+<span class="nc" id="L181">            String password = req.getParameter(&quot;password&quot;);</span>
+<span class="nc" id="L182">            String socialNumber = req.getParameter(&quot;socialNumber&quot;);</span>
+<span class="nc" id="L183">            String department = req.getParameter(&quot;department&quot;);</span>
+<span class="nc" id="L184">            String poste = req.getParameter(&quot;poste&quot;);</span>
+<span class="nc" id="L185">            long salary = Long.parseLong(req.getParameter(&quot;salary&quot;));</span>
+<span class="nc" id="L186">            int childNumber = Integer.parseInt(req.getParameter(&quot;childNumber&quot;));</span>
+<span class="nc" id="L187">            Date birthDate = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).parse(req.getParameter(&quot;birthDate&quot;));</span>
+<span class="nc" id="L188">            Date startDate = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).parse(req.getParameter(&quot;startDate&quot;));</span>
 
-<span class="nc" id="L171">            double allowance = employeeService.calculateFamilyAllowance(childNumber, salary);</span>
+<span class="nc" id="L190">            double allowance = employeeService.calculateFamilyAllowance(childNumber, salary);</span>
 
-<span class="nc" id="L173">            Employee employee = employeeService.findEmployeeById(id);</span>
-<span class="nc" id="L174">            employee.setName(name);</span>
-<span class="nc" id="L175">            employee.setEmail(email);</span>
-<span class="nc" id="L176">            employee.setPassword(password);</span>
-<span class="nc" id="L177">            employee.setSocialNumber(socialNumber);</span>
-<span class="nc" id="L178">            employee.setDepartment(department);</span>
-<span class="nc" id="L179">            employee.setPoste(poste);</span>
-<span class="nc" id="L180">            employee.setSalary(salary);</span>
-<span class="nc" id="L181">            employee.setChildNumber(childNumber);</span>
-<span class="nc" id="L182">            employee.setBirthDate(birthDate);</span>
-<span class="nc" id="L183">            employee.setStartDate(startDate);</span>
-<span class="nc" id="L184">            employee.setAllocationFamilial(allowance);</span>
+<span class="nc" id="L192">            Employee employee = employeeService.findEmployeeById(id);</span>
+<span class="nc" id="L193">            employee.setName(name);</span>
+<span class="nc" id="L194">            employee.setEmail(email);</span>
+<span class="nc" id="L195">            employee.setPassword(password);</span>
+<span class="nc" id="L196">            employee.setSocialNumber(socialNumber);</span>
+<span class="nc" id="L197">            employee.setDepartment(department);</span>
+<span class="nc" id="L198">            employee.setPoste(poste);</span>
+<span class="nc" id="L199">            employee.setSalary(salary);</span>
+<span class="nc" id="L200">            employee.setChildNumber(childNumber);</span>
+<span class="nc" id="L201">            employee.setBirthDate(birthDate);</span>
+<span class="nc" id="L202">            employee.setStartDate(startDate);</span>
+<span class="nc" id="L203">            employee.setAllocationFamilial(allowance);</span>
 
-<span class="nc" id="L186">            employeeService.update(employee);</span>
-<span class="nc" id="L187">            String modificationDetails = &quot;Updated employee with name: &quot; + employee.getName();</span>
-<span class="nc" id="L188">            EmployeeHistory history = new EmployeeHistory(employee, modificationDetails, &quot;admin&quot;);</span>
-<span class="nc" id="L189">            employeeService.addEmployeeHistory(history);</span>
+<span class="nc" id="L205">            employeeService.update(employee);</span>
+<span class="nc" id="L206">            String modificationDetails = &quot;Updated employee with name: &quot; + employee.getName();</span>
+<span class="nc" id="L207">            EmployeeHistory history = new EmployeeHistory(employee, modificationDetails, &quot;admin&quot;);</span>
+<span class="nc" id="L208">            employeeService.addEmployeeHistory(history);</span>
 
-<span class="nc" id="L191">            resp.sendRedirect(&quot;employee?action=employeeList&quot;);</span>
-<span class="nc" id="L192">        } catch (ParseException e) {</span>
-<span class="nc" id="L193">            e.printStackTrace();</span>
-<span class="nc" id="L194">            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, &quot;Invalid date format&quot;);</span>
-<span class="nc" id="L195">        } catch (NumberFormatException e) {</span>
-<span class="nc" id="L196">            e.printStackTrace();</span>
-<span class="nc" id="L197">            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, &quot;Invalid number format&quot;);</span>
-<span class="nc" id="L198">        }</span>
-<span class="nc" id="L199">    }</span>
+<span class="nc" id="L210">            resp.sendRedirect(&quot;employee?action=employeeList&quot;);</span>
+<span class="nc" id="L211">        } catch (ParseException e) {</span>
+<span class="nc" id="L212">            e.printStackTrace();</span>
+<span class="nc" id="L213">            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, &quot;Invalid date format&quot;);</span>
+<span class="nc" id="L214">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L215">            e.printStackTrace();</span>
+<span class="nc" id="L216">            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, &quot;Invalid number format&quot;);</span>
+<span class="nc" id="L217">        }</span>
+<span class="nc" id="L218">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

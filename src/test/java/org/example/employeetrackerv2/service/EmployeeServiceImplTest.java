@@ -93,9 +93,33 @@ class EmployeeServiceImplTest {
     }
 
     @Test
-    void testCalculateFamilyAllowance() {
-        double result = employeeService.calculateFamilyAllowance(4, 5000);
+    void testCalculateFamilyAllowance_LowerBracket_LessThanOrEqualThreeChildren() {
+        double result = employeeService.calculateFamilyAllowance(3, 5000);
+        assertEquals(900.0, result);
+    }
 
+    @Test
+    void testCalculateFamilyAllowance_LowerBracket_MoreThanThreeChildren() {
+        double result = employeeService.calculateFamilyAllowance(4, 5000);
         assertEquals(1050.0, result);
     }
+
+    @Test
+    void testCalculateFamilyAllowance_UpperBracket_LessThanOrEqualThreeChildren() {
+        double result = employeeService.calculateFamilyAllowance(3, 9000);
+        assertEquals(600.0, result);
+    }
+
+    @Test
+    void testCalculateFamilyAllowance_UpperBracket_MoreThanThreeChildren() {
+        double result = employeeService.calculateFamilyAllowance(4, 9000);
+        assertEquals(710.0, result);
+    }
+
+    @Test
+    void testCalculateFamilyAllowance_MiddleBracket() {
+        double result = employeeService.calculateFamilyAllowance(4, 7000);
+        assertEquals(0.0, result);
+    }
+
 }

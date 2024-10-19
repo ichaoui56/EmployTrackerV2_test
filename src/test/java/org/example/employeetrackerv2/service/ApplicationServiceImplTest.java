@@ -82,4 +82,29 @@ class ApplicationServiceImplTest {
 
         assertNotNull(result);
     }
+
+    @Test
+    void testGetFiltredApplications() {
+        List<Application> filteredApplications = new ArrayList<>();
+        Application app1 = new Application();
+        app1.setId(1);
+        app1.setStatus(Status.accepted);
+
+        Application app2 = new Application();
+        app2.setId(2);
+        app2.setStatus(Status.accepted);
+
+        filteredApplications.add(app1);
+        filteredApplications.add(app2);
+
+        when(applicationDao.getFilteredApplicationsByStatus(Status.accepted)).thenReturn(filteredApplications);
+
+        List<Application> result = applicationService.getFiltredApplications(Status.accepted);
+
+        assertEquals(2, result.size());
+        assertEquals(Status.accepted, result.get(0).getStatus());
+        assertEquals(Status.accepted, result.get(1).getStatus());
+        verify(applicationDao, times(1)).getFilteredApplicationsByStatus(Status.accepted);
+    }
+
 }

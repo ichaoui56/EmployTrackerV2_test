@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.example.employeetrackerv2.dao.IEmployeeDao;
 import org.example.employeetrackerv2.dao.IRecruiterDao;
 import org.example.employeetrackerv2.dao.impl.EmployeeDaoImpl;
@@ -12,6 +13,7 @@ import org.example.employeetrackerv2.dao.impl.RecruiterDaoImpl;
 import org.example.employeetrackerv2.model.entity.Employee;
 import org.example.employeetrackerv2.model.entity.EmployeeHistory;
 import org.example.employeetrackerv2.model.entity.Recruiter;
+import org.example.employeetrackerv2.model.entity.User;
 import org.example.employeetrackerv2.model.enums.Role;
 import org.example.employeetrackerv2.service.IEmployeeService;
 import org.example.employeetrackerv2.service.IRecruiterService;
@@ -58,6 +60,9 @@ public class EmployeeServlet extends HttpServlet {
             case "updateForm":
                 showUpdateForm(req, resp);
                 break;
+            case "displayProfile":
+                displayProfile(req, resp);
+                break;
             default:
                 employeeList(req, resp);
                 break;
@@ -83,6 +88,20 @@ public class EmployeeServlet extends HttpServlet {
 
     private void addForm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("WEB-INF/views/forms/addEmployeeForm.jsp").forward(req, resp);
+    }
+
+    private void displayProfile(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
+        User loggedUser = (User) session.getAttribute("user");
+
+        req.setAttribute("loggedUser", loggedUser);
+
+        if (loggedUser instanceof Employee) {
+            Employee employee = (Employee) loggedUser;
+            Employee loggedEmployee = employeeService.findEmployeeById(employee.getId());
+            req.setAttribute("employee", employee);
+        }
+        req.getRequestDispatcher("WEB-INF/views/lists/userProfile.jsp").forward(req, resp);
     }
 
     private void employeeList(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
