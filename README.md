@@ -54,8 +54,6 @@ cd test-unitaire
 Vérifiez que Maven est installé et configurez les dépendances dans pom.xml :
 
 ```bash
-xml
-Copier le code
 <dependencies>
     <dependency>
         <groupId>org.junit.jupiter</groupId>
@@ -88,5 +86,4 @@ mvn clean test
   - Créez une branche spécifique pour vos modifications : feature-ajout-tests.
   - Commitez vos changements avec des messages clairs.
   - Poussez la branche et ouvrez une Pull Request.
-### Licence
-Ce projet est sous licence MIT - voir le fichier LICENSE pour plus de détails.
+
